@@ -58,6 +58,7 @@ const {
   }
  */
   router.post('/login', checkUsernameExists, (req, res, next) => {
+    console.log(req.body)
     const { password } = req.body
     if (bcrypt.compareSync(password, req.user.password)) {
       // make it so the cookie is set on the client
