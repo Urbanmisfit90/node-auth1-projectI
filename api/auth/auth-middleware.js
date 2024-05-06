@@ -49,7 +49,7 @@ async function checkUsernameExists(req, res, next) {
   try {
     const user = await User.findBy({ username: req.body.username })
     console.log(user)
-    if (user.username) {
+    if (user) { // Check if user exists
       req.user = user
       console.log(req.user)
       next()
